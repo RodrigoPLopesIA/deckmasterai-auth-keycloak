@@ -114,3 +114,93 @@ body {
   box-shadow: none !important;
   border: none !important;
 } */
+
+/* Fundo geral */
+.dm-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+}
+
+/* Card */
+.dm-card {
+  background: #0f172a;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+/* Título */
+.dm-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.dm-title span {
+  color: #facc15; /* yellow-400 */
+}
+
+/* Campos */
+.dm-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-field label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #94a3b8;
+}
+
+.dm-field input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.dm-field input:focus {
+  outline: none;
+  border-color: #facc15;
+}
+
+/* Checkbox */
+.dm-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+/* Botão */
+.dm-button {
+  width: 100%;
+  padding: 14px;
+  background: #facc15;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dm-button:hover {
+  transform: scale(1.05);
+  background: #eab308;
+}

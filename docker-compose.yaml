@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  keycloak:
+  deckmaster-keycloak:
     image: quay.io/keycloak/keycloak:24.0
     container_name: deckmaster-keycloak
     command: start-dev
@@ -13,3 +13,23 @@ services:
     volumes:
       - ./themes:/opt/keycloak/themes
     restart: unless-stopped
+    networks:
+      - deckmaster-network
+  keycloak-db:
+    image: postgres:15
+    container_name: keycloak-db
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    volumes:
+      - keycloak-db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - deckmaster-network
+networks:
+  deckmaster-network:
+    name: deckmaster-network
+    external: true
+volumes:
+  keycloak-db-data:
